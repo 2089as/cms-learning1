@@ -1,0 +1,28 @@
+{
+  "name": "football-signs-backend",
+  "version": "1.0.0",
+  "description": "NestJS backend for football signs",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "start:dev": "nest start --watch",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.0.0",
+    "@nestjs/schematics": "^10.0.0",
+    "@nestjs/testing": "^10.0.0",
+    "@types/node": "^20.19.0",
+    "ts-loader": "^9.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
+  }
+}
