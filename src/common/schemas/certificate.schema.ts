@@ -4,12 +4,12 @@ import { Document } from 'mongoose';
 @Schema({ timestamps: true })
 export class Certificate extends Document {
   @Prop({ required: true })
-  user_id: string;
+  user_id!: string;
 
   @Prop({ required: true })
-  level_id: string;
+  level_id!: string;
 
-  @Prop()
+  @Prop({ required: false }) // Thường URL sẽ được tạo sau
   pdf_url?: string;
 }
 

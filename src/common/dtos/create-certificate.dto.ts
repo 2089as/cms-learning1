@@ -2,10 +2,10 @@ import { IsString, IsOptional } from 'class-validator';
 
 export class CreateCertificateDto {
   @IsString()
-  user_id: string;
+  user_id!: string;
 
   @IsString()
-  level_id: string;
+  level_id!: string;
 
   @IsOptional()
   @IsString()

@@ -3,29 +3,37 @@ import { Type } from 'class-transformer';
 
 class VocabularyItem {
   @IsString()
-  term: string;
+  term!: string; // Đã sửa: Thêm '!'
+
   @IsString()
-  @IsOptional() // Đảm bảo video riêng cho từng từ vựng là tùy chọn
+  @IsOptional()
   video?: string; 
+
   @IsString()
-  description: string;
+  description!: string; // Đã sửa: Thêm '!'
 }
 
 export class CreateLessonDto {
   @IsString()
-  level_id: string;
+  level_id!: string; // Đã sửa: Thêm '!'
+
   @IsString()
-  title: string;
+  title!: string; // Đã sửa: Thêm '!'
+
   @IsString()
   @IsOptional()
-  video_url?: string; // Video chính của bài học
+  video_url?: string;
+
   @IsString()
   @IsOptional()
   description?: string;
+
   @IsNumber()
-  day: number;
+  day!: number; // Đã sửa: Thêm '!'
+
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => VocabularyItem)
+  @IsOptional()
   vocabulary?: VocabularyItem[];
 }

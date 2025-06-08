@@ -2,14 +2,15 @@ import { IsString, IsArray } from 'class-validator';
 
 export class CreateQuestionDto {
   @IsString()
-  text: string;
+  text!: string;
 
   @IsArray()
-  options: string[];
+  @IsString({ each: true })
+  options!: string[];
 
   @IsString()
-  correct_answer: string;
+  correct_answer!: string;
 
   @IsString()
-  lesson_id: string;
+  lesson_id!: string;
 }

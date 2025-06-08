@@ -1,9 +1,9 @@
-import { IsString, IsInt } from 'class-validator';
+import { IsString, IsNumber } from 'class-validator';
 
 export class CreateLevelDto {
   @IsString()
-  name: string;
+  name!: string;
 
-  @IsInt()
-  order: number;
+  @IsNumber()
+  order!: number;
 }

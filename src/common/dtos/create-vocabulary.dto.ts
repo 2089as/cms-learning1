@@ -2,11 +2,11 @@ import { IsString } from 'class-validator';
 
 export class CreateVocabularyDto {
   @IsString()
-  word: string;
+  word!: string;
 
   @IsString()
-  meaning: string;
+  meaning!: string;
 
   @IsString()
-  lesson_id: string;
+  lesson_id!: string;
 }

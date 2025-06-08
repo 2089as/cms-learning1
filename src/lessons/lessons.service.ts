@@ -80,14 +80,14 @@ export class LessonsService {
 
     try {
       const url = `https://www.googleapis.com/youtube/v3/videos?part=status&id=${videoId}&key=${apiKey}`;
-      const response = await firstValueFrom(this.httpService.get(url));
+      const response: any = await firstValueFrom(this.httpService.get(url));
       const data = response.data;
 
       if (data.items && data.items.length > 0) {
         return data.items[0].status.embeddable;
       }
       throw new BadRequestException('Video not found');
-    } catch (error) {
+    } catch (error: any) { // Đã sửa lỗi ở đây
       throw new BadRequestException(`Error checking video embeddable: ${error.message}`);
     }
   }
